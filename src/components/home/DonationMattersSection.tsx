@@ -10,13 +10,13 @@ interface DonationMatterCard {
 
 const cards: DonationMatterCard[] = [
   {
-    icon: "/images/donation1.png",
+    icon: "/images/donation2.png",
     title: "Immediate Impact",
     description:
       "Your contribution goes straight to the people who need it most, delivering fast and meaningful support where it matters.",
   },
   {
-    icon: "/images/donation1.png",
+    icon: "/images/donation3.png",
     title: "Trusted results",
     description:
       "Our campaigns consistently achieve their goals, creating measurable and lasting change for the communities we support.",
