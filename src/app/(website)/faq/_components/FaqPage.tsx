@@ -43,6 +43,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
 ];
 
 const FAQ_ITEMS: FaqItem[] = [
+  // Funding Basics
   {
     id: "q1",
     categoryId: "funding-basics",
@@ -56,6 +57,89 @@ const FAQ_ITEMS: FaqItem[] = [
     question: "When will I receive my funds?",
     answer:
       "Funds are typically available within 2–5 business days after a donation is made.",
+  },
+  {
+    id: "q3",
+    categoryId: "funding-basics",
+    question: "Is there any platform fee?",
+    answer:
+      "Yes, a small platform fee may apply depending on the campaign type and payment processing charges.",
+  },
+  {
+    id: "q4",
+    categoryId: "funding-basics",
+    question: "Can I edit my campaign after publishing?",
+    answer:
+      "Yes, you can update your campaign details anytime.",
+  },
+
+  // Withdrawals
+  {
+    id: "q5",
+    categoryId: "withdrawals",
+    question: "How do I withdraw my funds?",
+    answer:
+      "You can withdraw funds directly to your linked bank account.",
+  },
+  {
+    id: "q6",
+    categoryId: "withdrawals",
+    question: "Are there withdrawal limits?",
+    answer:
+      "Minimum withdrawal limits may apply depending on your region.",
+  },
+  {
+    id: "q7",
+    categoryId: "withdrawals",
+    question: "How long does withdrawal take?",
+    answer:
+      "Withdrawals usually take 2–7 business days.",
+  },
+
+  // Account
+  {
+    id: "q8",
+    categoryId: "account",
+    question: "How do I create an account?",
+    answer:
+      "Click signup, enter your details, and verify your email.",
+  },
+  {
+    id: "q9",
+    categoryId: "account",
+    question: "I forgot my password. What should I do?",
+    answer:
+      "Use the reset password option from the login page.",
+  },
+  {
+    id: "q10",
+    categoryId: "account",
+    question: "Can I delete my account?",
+    answer:
+      "Yes, from your profile settings.",
+  },
+
+  // Donations
+  {
+    id: "q11",
+    categoryId: "donations",
+    question: "Are donations refundable?",
+    answer:
+      "Donations are generally non-refundable.",
+  },
+  {
+    id: "q12",
+    categoryId: "donations",
+    question: "Can I donate anonymously?",
+    answer:
+      "Yes, you can hide your name.",
+  },
+  {
+    id: "q13",
+    categoryId: "donations",
+    question: "Is my payment information secure?",
+    answer:
+      "Yes, all payments are encrypted and secure.",
   },
 ];
 
@@ -76,9 +160,9 @@ export default function FaqPage() {
         </h2>
 
         {/* Main Layout */}
-        <div className="flex flex-col lg:flex-row gap-10">
-          {/* Category Sidebar */}
-          <div className="w-full lg:w-[320px] bg-white rounded-[8px] shadow-sm overflow-hidden">
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
+          {/* Sidebar */}
+          <div className="w-full lg:w-[320px] bg-white rounded-[8px] overflow-hidden h-fit lg:sticky lg:top-20">
             {FAQ_CATEGORIES.map((cat) => {
               const isActive = cat.id === activeCategory;
               return (
@@ -107,8 +191,8 @@ export default function FaqPage() {
             })}
           </div>
 
-          {/* FAQ Accordion */}
-          <div className="flex-1 px-8 py-6 divide-y">
+          {/* FAQ Content */}
+          <div className="flex-1 px-8 py-6 divide-y bg-white rounded-[8px]">
             {filteredFaqs.length > 0 ? (
               filteredFaqs.map((item) => {
                 const isOpen = openId === item.id;
@@ -145,9 +229,9 @@ export default function FaqPage() {
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-20">
-          <div className="relative h-[326px]  overflow-hidden group">
+          <div className="relative h-[326px] overflow-hidden group">
             <Image
               src="/images/b-success-1.jpg"
               alt="Discover campaigns"
@@ -166,7 +250,7 @@ export default function FaqPage() {
             </div>
           </div>
 
-          <div className="relative h-[326px]  overflow-hidden group">
+          <div className="relative h-[326px] overflow-hidden group">
             <Image
               src="/images/b-success-2.jpg"
               alt="Start fundraising"
