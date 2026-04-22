@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -15,14 +16,12 @@ export function Footer() {
             {/* Company Info */}
             <div className="flex flex-col max-w-xl">
               <div className="flex items-center gap-2 mb-5">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                  <span className="text-sm font-bold text-primary-foreground">
-                    D
-                  </span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                  <Image src="/images/mainLogo.png" width={300} height={300} alt='logo' className='w-full h-full'/>
                 </div>
-                <span className="text-lg font-semibold text-foreground">
+                {/* <span className="text-lg font-semibold text-foreground">
                   DonorsChoose
-                </span>
+                </span> */}
               </div>
 
               <p className="text-sm text-foreground/70 leading-relaxed">
@@ -39,11 +38,11 @@ export function Footer() {
 
               <ul className="space-y-3">
                 {[
-                  { label: 'Home', href: '#' },
-                  { label: 'What we do', href: '#' },
-                  { label: 'Contact us', href: '#' },
+                  { label: 'Home', href: '/' },
+                  // { label: 'What we do', href: '#' },
+                  { label: 'How it works', href: '/how-it-works' },
                   { label: 'About us', href: '#' },
-                  { label: 'More', href: '#' },
+                  // { label: 'More', href: '#' },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link
@@ -105,14 +104,14 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-xs sm:text-sm text-foreground/60 hover:text-foreground transition-colors"
             >
               Privacy Policy
             </Link>
 
             <Link
-              href="#"
+              href="/terms-service"
               className="text-xs sm:text-sm text-foreground/60 hover:text-foreground transition-colors"
             >
               Terms of Service
